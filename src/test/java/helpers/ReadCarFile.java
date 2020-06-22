@@ -1,3 +1,5 @@
+package helpers;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -20,6 +22,8 @@ public class ReadCarFile {
         String lineToBeParsed;
         while ((lineToBeParsed = bufferedFile.readLine()) != null) {
 
+            List<String> regsFromFileLine = parseCarRegistrations(lineToBeParsed);
+            listOfCarRegistrations.addAll(regsFromFileLine);
         }
 
         return listOfCarRegistrations;
